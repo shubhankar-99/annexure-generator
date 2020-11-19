@@ -5,13 +5,13 @@ class Post extends Component {
     state = {
         title: '',
         content: '',
-        image: '',
+        duration: '',
         postSubmitted: false,
         date: '',
         email: '',
         Name: '',
         college: '',
-        duration: ''
+        image: '',
     }
 
     onChange = input => e => {
@@ -58,7 +58,7 @@ class Post extends Component {
                                                 </div>
                                                 <div className="form-group">
                                                     <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
-                                                    <input onChange={this.onChange('college')} name="title" type="text" placeholder="College" className="form-control" />
+                                                    <input onChange={this.onChange('college')} name="college" type="text" placeholder="College" className="form-control" />
                                                 </div>
                                                 <div className="form-group">
                                                     <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
@@ -66,7 +66,7 @@ class Post extends Component {
                                                 </div>
                                                 <div className="form-group">
                                                     <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
-                                                    <input onChange={this.onChange('duration')} name="title" type="text" placeholder="Duration" className="form-control" />
+                                                    <input onChange={this.onChange('duration')} name="duration" type="text" placeholder="Duration" className="form-control" />
                                                 </div>
                                                 
                                                 <div className="form-group">
@@ -79,7 +79,7 @@ class Post extends Component {
                             </div>
                         </div>
                     </div>) : (
-                        <PDF  date = {this.state.date} Name ={this.state.Name} email={this.state.email} college={this.state.college} title={this.state.title} content={this.state.content} image={this.state.image} />
+                        <PDF  date = {this.state.date} Name ={this.state.Name} email={this.state.email} college={this.state.college} title={this.state.title} duration={this.state.duration} />
                     )
                 }
             </>

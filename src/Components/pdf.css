@@ -1,14 +1,21 @@
 .Post{
     background-image: url(../images/letter.jpg) ;
-    max-width: 800px;
-    background-size: cover;
-    display: table;
-    align-self: center;
+   
+    background-size: 652px 898px;
+    background-repeat: no-repeat;
     margin: 0 auto;
+    display: table;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 110px;
+    padding-top: 90px;
+    padding-bottom: 40px;
+    max-width: 722px;
+    font-size: 14px;
+   
   }
-  .pdf{
-      padding: 0px;
-  }
+  
+  
   .sign{
       height: 80px;
       width: 150px;
