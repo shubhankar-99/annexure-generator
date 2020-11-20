@@ -15,13 +15,9 @@ export class SignIn extends Component {
         }
     }
 
-    continue = (e) => {
-        e.preventDefault();
-        this.props.nextStep();
-    }
     nextContinue = (e) => {
         e.preventDefault();
-        this.props.next2Step();
+        this.props.nextStep();
     }
     render() {
         return (
@@ -86,7 +82,7 @@ export class SignIn extends Component {
                                 Sign In
                             </Button>
                             <div style={{ height: 20 }} />
-                            <Button variant="outlined" onClick={this.continue}>Don't have an Account? Sign Up</Button>
+                            {/* <Button variant="outlined" onClick={this.continue}>Don't have an Account? Sign Up</Button> */}
 
                         </div>
 
