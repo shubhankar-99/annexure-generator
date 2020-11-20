@@ -3,6 +3,7 @@ import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
 import LandingPage from './Components/LandingPage';
 import Post from './Components/LetterHead';
+import Annexure from './Components/Annexure';
 
 export class App extends Component {
 
@@ -57,11 +58,16 @@ export class App extends Component {
                 return(
                     <LandingPage
                     nextStep={this.nextStep}
+                    next2Step={this.next2Step}
                     />
                 )
             case 4:
                 return (
                     <Post/>
+                )
+            case 5:
+                return(
+                    <Annexure/>
                 )
                 
             default:
