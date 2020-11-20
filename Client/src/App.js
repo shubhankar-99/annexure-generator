@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import SignIn from './Components/SignIn';
-import SignUp from './Components/SignUp';
 import LandingPage from './Components/LandingPage';
 import Post from './Components/LetterHead';
 
@@ -45,21 +44,14 @@ export class App extends Component {
                         next2Step={this.next2Step}
                     />
                 )
+           
             case 2:
-                return (
-                    <SignUp
-                        nextStep={this.nextStep}
-                        prevStep={this.prevStep}
-                        
-                    />
-                )
-            case 3:
                 return(
                     <LandingPage
                     nextStep={this.nextStep}
                     />
                 )
-            case 4:
+            case 3:
                 return (
                     <Post/>
                 )
