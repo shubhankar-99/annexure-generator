@@ -49,6 +49,7 @@ export class App extends Component {
                 return(
                     <LandingPage
                     nextStep={this.nextStep}
+                    prevStep={this.prevStep}
                     />
                 )
             case 3:
