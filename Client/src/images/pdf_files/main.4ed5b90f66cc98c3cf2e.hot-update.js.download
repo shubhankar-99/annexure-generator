@@ -1,0 +1,32 @@
+webpackHotUpdate("main",{
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/Components/pdf.css":
+/*!***********************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-oneOf-4-1!./node_modules/postcss-loader/src??postcss!./src/Components/pdf.css ***!
+  \***********************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _images_letter_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../images/letter.jpg */ "./src/images/letter.jpg");
+// Imports
+
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_images_letter_jpg__WEBPACK_IMPORTED_MODULE_2__["default"]);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, ".Post{\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n    max-width: 800px;\r\n    height: 720px;\r\n    background-size: 800px 720px;\r\n    display: table;\r\n    align-self: center;\r\n    margin: 0 auto;\r\n  }\r\n  .pdf{\r\n      padding: 20px;\r\n  }\r\n  .sign{\r\n      height: 80px;\r\n      width: 150px;\r\n  }\r\n  ", "",{"version":3,"sources":["webpack://src/Components/pdf.css"],"names":[],"mappings":"AAAA;IACI,yDAA4C;IAC5C,gBAAgB;IAChB,aAAa;IACb,4BAA4B;IAC5B,cAAc;IACd,kBAAkB;IAClB,cAAc;EAChB;EACA;MACI,aAAa;EACjB;EACA;MACI,YAAY;MACZ,YAAY;EAChB","sourcesContent":[".Post{\r\n    background-image: url(../images/letter.jpg) ;\r\n    max-width: 800px;\r\n    height: 720px;\r\n    background-size: 800px 720px;\r\n    display: table;\r\n    align-self: center;\r\n    margin: 0 auto;\r\n  }\r\n  .pdf{\r\n      padding: 20px;\r\n  }\r\n  .sign{\r\n      height: 80px;\r\n      width: 150px;\r\n  }\r\n  "],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ })
+
+})
+//# sourceMappingURL=main.4ed5b90f66cc98c3cf2e.hot-update.js.map

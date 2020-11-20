@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
 import LandingPage from './Components/LandingPage';
+import Post from './Components/LetterHead';
 
 export class App extends Component {
 
@@ -54,9 +55,14 @@ export class App extends Component {
                 )
             case 3:
                 return(
-                    <LandingPage/>
+                    <LandingPage
+                    nextStep={this.nextStep}
+                    />
                 )
-            
+            case 4:
+                return (
+                    <Post/>
+                )
                 
             default:
                 console.log('Wrong Choice');
