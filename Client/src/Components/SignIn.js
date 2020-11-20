@@ -4,6 +4,8 @@ import logo from '../images/logo.jpg';
 import Slider from '../Slider'
 import { LockRounded } from "@material-ui/icons";
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
+import * as LoginLink from '../Constant';
+import axios from 'axios'
 
 export class SignIn extends Component {
     constructor(props) {
@@ -17,7 +19,26 @@ export class SignIn extends Component {
 
     nextContinue = (e) => {
         e.preventDefault();
-        this.props.nextStep();
+        axios.post(LoginLink.Link.baseUrl.LogIn, {
+            email: this.state.email,
+            password: this.state.password
+          })
+          .then((response) => {
+              
+            if(response.data.isAuth)
+            {
+                this.props.nextStep();
+            }
+            else
+            {
+                alert('Wrong Username or Password')
+            }
+            
+          }, (error) => {
+            alert('Something Went Wrong')
+          });
+
+       
     }
     render() {
         return (
