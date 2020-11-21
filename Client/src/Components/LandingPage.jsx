@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './card-style.css';
+import './card-style.module.css';
 import { Button} from '@material-ui/core';
 import i1 from '../images/1.jpeg';
 import i2 from '../images/2.jpg';
