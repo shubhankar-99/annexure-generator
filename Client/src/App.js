@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SignIn from './Components/SignIn';
 import LandingPage from './Components/LandingPage';
 import Post from './Components/LetterHead';
+// import InvoicePdf from './Components/InvoicePdf'
 
 export class App extends Component {
 
@@ -43,12 +44,14 @@ export class App extends Component {
                         nextStep={this.nextStep}
                         next2Step={this.next2Step}
                     />
+                    // <InvoicePdf/>
                 )
            
             case 2:
                 return(
                     <LandingPage
                     nextStep={this.nextStep}
+                    prevStep={this.prevStep}
                     />
                 )
             case 3:
