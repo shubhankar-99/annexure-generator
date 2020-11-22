@@ -1,0 +1,14 @@
+.annex{
+    
+    max-width: 1000px;
+    background-image: url(../images/letter.jpg) ;
+    margin: 0 auto;
+    background-size: 1000px 1448px;
+    background-repeat: repeat;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-top: 180px;
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-bottom: 600px;
+}

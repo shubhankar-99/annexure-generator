@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Annex from './AnnexurePDF';
-import { PDFViewer } from '@react-pdf/renderer';
 class Annexure extends Component{
     state={
         name:'',
