@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Annex from './AnnexurePDF';
+import { PDFViewer } from '@react-pdf/renderer';
 class Annexure extends Component{
     state={
         name:'',
@@ -73,7 +74,7 @@ class Annexure extends Component{
                         </div>
                     </div>) : (
                         <Annex  date = {this.state.date} name ={this.state.name} stipend={this.state.stipend} place={this.state.place} position={this.state.position} duration={this.state.duration} />
-                    )
+                        )
                 }
             </>
         );
