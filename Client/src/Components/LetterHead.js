@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PDF from './PDF';
+import Pdf from './PDF';
 
 class Post extends Component {
     state = {
@@ -79,7 +79,7 @@ class Post extends Component {
                             </div>
                         </div>
                     </div>) : (
-                        <PDF  date = {this.state.date} Name ={this.state.Name} email={this.state.email} college={this.state.college} title={this.state.title} duration={this.state.duration} />
+                        <Pdf  date = {this.state.date} Name ={this.state.Name} email={this.state.email} college={this.state.college} title={this.state.title} duration={this.state.duration} />
                     )
                 }
             </>

@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import './card-style.css';
+import './card-style.module.css';
+import { Button} from '@material-ui/core';
 import i1 from '../images/1.jpeg';
 import i2 from '../images/2.jpg';
 import i3 from '../images/3.jpg';
 import HoldingHand from '../images/HoldingHand.jpg';
+import * as LogoutLink from '../Constant';
+import axios from 'axios'
+
 
 
 class LandingPage extends Component {
@@ -14,7 +18,10 @@ class LandingPage extends Component {
     }
     nextContinue = (e) => {
         e.preventDefault();
-        this.props.next2Step();
+        this.props.next2Step();}
+    back =(e) =>{
+        e.preventDefault();
+        this.props.prevStep();
     }
     render() {
         return (
@@ -74,11 +81,11 @@ class LandingPage extends Component {
                         </div>
                     </div>
                 </div>
+                <div style={{marginTop:'10px'}}> 
+                    <Button color="primary" variant="contained" onClick={this.back}>Log Out</Button>
+                </div>
             </div>
         )
-    }
 }
-
+}
 export default LandingPage;
-
-

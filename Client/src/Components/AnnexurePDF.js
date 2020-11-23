@@ -33,7 +33,7 @@ render(){
     <button  onClick={this.printdoc}>Generate</button>
   <div id="page">
     <div className = {styles.annex}>
-    <h6><b><u>Annexure</u></b></h6>
+    <h4><b><u>Annexure</u></b></h4>
     <p>You shall be governed by the following terms and condition of service during working period Hand Holding Solution, and those may be amended from time to time.<br/>
 <br/> <br/>
 1.  You are being hired as a {this.props.position} and Mr. Pranay Ranjan & Mr. Akshay Khandelwal would be your Reporting Manager and Mentor. As a {this.props.position} you would be responsible for following tasks and responsibilities:-<br/>

@@ -1,12 +1,12 @@
 import React , { Component}from 'react';
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
-import './pdf.css';
+import styles from './pdf.module.css';
 import sign from '../images/Sign.jpeg';
 
 
 
-class PDF extends Component{
+class Pdf extends Component{
   constructor(props){
     
     super(props)
@@ -25,7 +25,7 @@ class PDF extends Component{
   render(){
   return (
     <div> <button onClick={this.printDocument}>Download PDF</button><br/>
-      <div id='divToPrint' className="Post">
+      <div id='divToPrint' className={styles.Post}>
         <div className="pdf">
         <p>Date: {this.props.date}</p>
         <p>{this.props.Name}</p>  
@@ -39,7 +39,7 @@ class PDF extends Component{
         <br/>
          <p>Sincerely,</p>
          
-        <img className="sign" src={sign} alt="sign" />
+        <img className={styles.sign} src={sign} alt="sign" />
         <h6><b>Pranay Ranjan<br/>
                Co-founder,<br/>
                Hand Holding Solution, INDIA<br/>
@@ -58,4 +58,4 @@ class PDF extends Component{
   );
 
 }}
-export default PDF;
+export default Pdf;
