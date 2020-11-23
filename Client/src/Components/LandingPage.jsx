@@ -16,6 +16,9 @@ class LandingPage extends Component {
         e.preventDefault();
         this.props.nextStep();
     }
+    nextContinue = (e) => {
+        e.preventDefault();
+        this.props.next2Step();}
     back =(e) =>{
         e.preventDefault();
         this.props.prevStep();
@@ -57,7 +60,7 @@ class LandingPage extends Component {
                                 <p className="card-text text-secondary">
                                 Generate a beautiful and customisable Annexure as per your need. 
                                 </p>
-                              <button onClick={this.continue} className="btn btn-outline-success">Generate Annexure </button>
+                              <button onClick={this.nextContinue} className="btn btn-outline-success">Generate Annexure </button>
                             </div>
                             </div>
                         </div>
@@ -83,9 +86,6 @@ class LandingPage extends Component {
                 </div>
             </div>
         )
-    }
 }
-
+}
 export default LandingPage;
-
-

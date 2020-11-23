@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-import Pdf from './PDF';
-
-class Post extends Component {
-    state = {
-        title: '',
-        content: '',
+import Annex from './AnnexurePDF';
+class Annexure extends Component { 
+    state={
+        name:'',
         duration: '',
         postSubmitted: false,
         date: '',
-        email: '',
-        Name: '',
-        college: '',
-        image: '',
-    }
+        position:'',
+        stipend:'',
+        place: 'Work From Home',
 
+    }
     onChange = input => e => {
         this.setState({
             [input]: e.target.value
@@ -22,7 +19,7 @@ class Post extends Component {
 
     sunmitPost = (e) => {
         
-        if(!this.state.date || !this.state.Name || !this.state.college|| !this.state.duration|| !this.state.email|| !this.state.title){
+        if(!this.state.name || !this.state.duration || !this.state.date|| !this.state.position|| !this.state.stipend|| !this.state.place){
             alert('All fields are required!');
             e.preventDefault();
         }else{
@@ -50,23 +47,19 @@ class Post extends Component {
                                                 </div>
                                                 <div className="form-group">
                                                     <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
-                                                    <input onChange={this.onChange('Name')} name="text" type="text" placeholder="Name" className="form-control" />
+                                                    <input onChange={this.onChange('name')} name="text" type="text" placeholder="Name" className="form-control" />
                                                 </div>
                                                 <div className="form-group">
                                                     <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
-                                                    <input onChange={this.onChange('email')} name="email" type="email" placeholder="Email" className="form-control" />
+                                                    <input onChange={this.onChange('duration')} name="duration" type="duration" placeholder="Duration" className="form-control" />
                                                 </div>
                                                 <div className="form-group">
                                                     <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
-                                                    <input onChange={this.onChange('college')} name="college" type="text" placeholder="College" className="form-control" />
+                                                    <input onChange={this.onChange('position')} name="position" type="text" placeholder="Position" className="form-control" />
                                                 </div>
                                                 <div className="form-group">
                                                     <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
-                                                    <input onChange={this.onChange('title')} name="title" type="text" placeholder="Position" className="form-control" />
-                                                </div>
-                                                <div className="form-group">
-                                                    <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
-                                                    <input onChange={this.onChange('duration')} name="duration" type="text" placeholder="Duration" className="form-control" />
+                                                    <input onChange={this.onChange('stipend')} name="stipend" type="text" placeholder="Stipend" className="form-control" />
                                                 </div>
                                                 
                                                 <div className="form-group">
@@ -79,12 +72,12 @@ class Post extends Component {
                             </div>
                         </div>
                     </div>) : (
-                        <Pdf  date = {this.state.date} Name ={this.state.Name} email={this.state.email} college={this.state.college} title={this.state.title} duration={this.state.duration} />
-                    )
+                        <Annex  date = {this.state.date} name ={this.state.name} stipend={this.state.stipend} place={this.state.place} position={this.state.position} duration={this.state.duration} />
+                        )
                 }
             </>
         );
     }
 }
 
-export default Post;
+export default Annexure;

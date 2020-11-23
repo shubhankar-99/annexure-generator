@@ -1,6 +1,5 @@
 const express=require('express');
 const mongoose= require('mongoose');
-const cors = require('cors')
 const bodyparser=require('body-parser');
 const cookieParser=require('cookie-parser');
 const User=require('./models/user');
@@ -10,7 +9,6 @@ const db=require('./config/config').get(process.env.NODE_ENV);
 
 const app=express();
 // app use
-app.use(cors())
 app.use(bodyparser.urlencoded({extended : false}));
 app.use(bodyparser.json());
 app.use(cookieParser());

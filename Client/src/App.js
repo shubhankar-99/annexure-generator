@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SignIn from './Components/SignIn';
 import LandingPage from './Components/LandingPage';
 import Post from './Components/LetterHead';
+import Annexure from './Components/Annexure';
 // import InvoicePdf from './Components/InvoicePdf'
 
 export class App extends Component {
@@ -51,12 +52,17 @@ export class App extends Component {
                 return(
                     <LandingPage
                     nextStep={this.nextStep}
+                    next2Step={this.next2Step}
                     prevStep={this.prevStep}
                     />
                 )
             case 3:
                 return (
                     <Post/>
+                )
+            case 4:
+                return(
+                    <Annexure/>
                 )
                 
             default:
