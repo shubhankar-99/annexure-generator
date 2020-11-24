@@ -2,7 +2,11 @@ const url =  "http://localhost:5000/api"
 export const Link = {
     baseUrl:{
     LogIn : url + "/login",
-    Logout: url+ "/logout"
+    Logout: url+ "/logout",
+    LetterHeadPost: url + "/letterHeadPost",
+    LetterHeadGet: url + "/letterHeadGet",
+    AnnexurePost: url + "/annexurePost",
+    AnnexureGet: url + "/annexureGet"
     }
     
     

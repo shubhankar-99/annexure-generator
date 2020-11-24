@@ -1,5 +1,6 @@
 const express=require('express');
 const mongoose= require('mongoose');
+var cors = require('cors')
 const bodyparser=require('body-parser');
 const cookieParser=require('cookie-parser');
 const User=require('./models/user');
@@ -7,11 +8,14 @@ const {auth} =require('./middlewares/auth');
 const db=require('./config/config').get(process.env.NODE_ENV);
 
 
+
 const app=express();
 // app use
+app.use(cors())
 app.use(bodyparser.urlencoded({extended : false}));
 app.use(bodyparser.json());
 app.use(cookieParser());
+
 
 // database connection
 mongoose.Promise=global.Promise;
@@ -93,6 +97,132 @@ app.get('/api/profile',auth,function(req,res){
             name: req.user.firstname + req.user.lastname
             
         })
+});
+
+//For Letter Head Post Request
+app.post('/api/letterHeadPost', auth, function (req, res) {
+
+    let token = req.cookies.auth;
+    //console.log(req.user);
+
+    User.findByToken(token, (err, user) => {
+        if (err) return res.json(err)
+        else if(!req.body.name 
+            || !req.body.college 
+            || !req.body.date 
+            || !req.body.title 
+            || !req.body.duration 
+            || !req.body.email){
+
+            return res.json("All fields are required")
+        }
+        else if (user) {
+           // console.log(user.email);
+            // console.log(req.body.name);
+            // console.log(req.body.email);
+            // console.log(req.body.college);
+            // console.log(req.body.date);
+            // console.log(req.body.title);
+            // console.log(req.body.duration);
+            
+            User.findOneAndUpdate(
+                { email: user.email },
+                {$push: {letterHead: {
+                            "name":req.body.name,
+                            "college":req.body.college,
+                            "date": req.body.date,
+                            "title": req.body.title,
+                            "duration": req.body.duration,
+                            "email": req.body.email
+                        }
+                        }},
+                        function( error, result){
+                            if(error)
+                            return res.json(error);
+                            else
+                            return res.json('Successful');
+                        }
+                        )
+                        
+            
+        }
+        else {
+            return res.json('Error');
+        }
+    });
+});
+
+//For Letter Head Get Request
+app.get('/api/letterHeadGet', auth, function (req, res) {
+    res.json({
+        letterHead: req.user.letterHead
+    });
+   console.log(req.user.letterHead);
+});
+
+//For Annexure Post Request
+app.post('/api/annexurePost', auth, function (req, res) {
+
+    let token = req.cookies.auth;
+    //console.log(req.user);
+
+    User.findByToken(token, (err, user) => {
+        if (err) return res.json(err)
+        else if(!req.body.name 
+            || !req.body.date 
+            || !req.body.psition 
+            || !req.body.duration 
+            || !req.body.stipend 
+            || !req.body.place)
+        {
+            return res.json("All fields are required")
+        }
+        else if (user) {
+            // console.log(req.user.email);
+            // console.log(req.body.name);
+            // console.log(req.body.position);
+            // console.log(req.body.date);
+            // console.log(req.body.stipend);
+            // console.log(req.body.place);
+            // console.log(req.body.duration);
+
+            User.findOneAndUpdate(
+                { email: user.email },
+                {
+                    $push: {
+                        annexure: {
+                            "name": req.body.name,
+                            "date": req.body.date,
+                            "position": req.body.position,
+                            "duration": req.body.duration,
+                            "stipend": req.body.stipend,
+                            "place": req.body.place
+                        }
+                    }
+                },
+                function( error, result){
+                    if(error)
+                    return res.json(error);
+                    else
+                    return res.json('Successful');
+                }
+
+            )
+
+           // return res.json('Successful');
+        }
+        else {
+            return res.json('Error');
+        }
+    });
+});
+
+//For Annexure Get
+app.get('/api/annexureGet', auth, function (req, res) {
+    res.json({
+        annexure: req.user.annexure
+    });
+   // console.log(req.user.annexure);
 });
 
 
