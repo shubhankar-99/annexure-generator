@@ -170,7 +170,7 @@ app.post('/api/annexurePost', auth, function (req, res) {
         if (err) return res.json(err)
         else if(!req.body.name 
             || !req.body.date 
-            || !req.body.psition 
+            || !req.body.position 
             || !req.body.duration 
             || !req.body.stipend 
             || !req.body.place)
