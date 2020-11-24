@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Annex from './AnnexurePDF';
+import * as C from '../Constant';
+import axios from 'axios';
+
 class Annexure extends Component { 
     state={
         name:'',
@@ -23,9 +26,31 @@ class Annexure extends Component {
             alert('All fields are required!');
             e.preventDefault();
         }else{
-            this.setState({
-                postSubmitted: true
-            });
+            // this.setState({
+            //     postSubmitted: true
+            // });
+
+            const data={
+                name:this.state.name,
+                date: this.state.date,
+                position: this.state.position,
+                duration: this.state.duration,
+                stipend: this.state.stipend,
+                place: this.state.place
+            }
+
+            axios.post(C.Link.baseUrl.AnnexurePost, {
+                data
+              })
+              .then((response) => {
+                this.setState({
+                    postSubmitted: true
+                });
+                  
+                alert('Successful');
+              }, (error) => {
+                alert('Something Went Wrong')
+              });
         }
     }
 
