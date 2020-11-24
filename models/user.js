@@ -34,7 +34,12 @@ const userSchema=mongoose.Schema({
     },
     token:{
         type: String
-    }
+    },
+    letterHead : { type : Array , "default" : [] },
+    annexure : { type : Array , "default" : [] },
+    invoice : { type : Array , "default" : [] }
+
+    
 });
 // to signup a user
 userSchema.pre('save',function(next){
