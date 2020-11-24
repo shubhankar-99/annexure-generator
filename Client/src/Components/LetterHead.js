@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Pdf from './PDF';
+import axios from 'axios';
+import * as C from '../Constant';
 
 class Post extends Component {
     state = {
@@ -18,17 +20,42 @@ class Post extends Component {
         this.setState({
             [input]: e.target.value
         });
+        
+
+
+
     }
 
     sunmitPost = (e) => {
+
         
         if(!this.state.date || !this.state.Name || !this.state.college|| !this.state.duration|| !this.state.email|| !this.state.title){
             alert('All fields are required!');
             e.preventDefault();
         }else{
-            this.setState({
-                postSubmitted: true
-            });
+            const data={
+                name:this.state.Name,
+                college: this.state.college,
+                date: this.state.date,
+                title: this.state.title,
+                duration: this.state.duration,
+                email: this.state.email
+            }
+            e.preventDefault();
+            axios.post(C.Link.baseUrl.LetterHeadPost, {
+                data
+              })
+              .then((response) => {
+                this.setState({
+                    postSubmitted: true
+                });
+                  
+                alert('Successful');
+              }, (error) => {
+                alert('Something Went Wrong')
+              });
+
+            
         }
     }
 
