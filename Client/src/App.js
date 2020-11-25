@@ -3,6 +3,7 @@ import SignIn from './Components/SignIn';
 import LandingPage from './Components/LandingPage';
 import Post from './Components/LetterHead';
 import Annexure from './Components/Annexure';
+import PaginationTableComponent from './Components/GeneratedList';
 // import InvoicePdf from './Components/InvoicePdf'
 
 export class App extends Component {
@@ -34,6 +35,12 @@ export class App extends Component {
             step: step +2 
         });
     }
+    next3Step = () => {
+        const {step} = this.state;
+        this.setState({
+            step: step + 3
+        });
+    }
 
 
     render() {
@@ -54,6 +61,7 @@ export class App extends Component {
                     nextStep={this.nextStep}
                     next2Step={this.next2Step}
                     prevStep={this.prevStep}
+                    next3Step={this.next3Step}
                     />
                 )
             case 3:
@@ -64,7 +72,10 @@ export class App extends Component {
                 return(
                     <Annexure/>
                 )
-                
+            case 5:
+                return(
+                    <PaginationTableComponent/>
+                )    
             default:
                 console.log('Wrong Choice');
                     

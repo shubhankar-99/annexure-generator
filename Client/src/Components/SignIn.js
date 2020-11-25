@@ -19,7 +19,7 @@ export class SignIn extends Component {
 
     nextContinue = (e) => {
         e.preventDefault();
-        axios.post(LoginLink.Link.baseUrl.LogIn, {
+       axios.post(LoginLink.Link.baseUrl.LogIn, {
             email: this.state.email,
             password: this.state.password
           })
@@ -37,8 +37,8 @@ export class SignIn extends Component {
           }, (error) => {
             alert('Something Went Wrong')
           });
+        
           
-
        
     }
     render() {
