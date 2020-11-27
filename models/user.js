@@ -85,15 +85,20 @@ userSchema.methods.generateToken=function(cb){
 }
 
 // find by token
-userSchema.statics.findByToken=function(token,cb){
-    var user=this;
-
-    jwt.verify(token,confiq.SECRET,function(err,decode){
-        user.findOne({"_id": decode, "token":token},function(err,user){
-            if(err) return cb(err);
-            cb(null,user);
-        })
+userSchema.statics.findByToken=async function(token){
+    try{
+    var user =this;
+    return jwt.verify(token,confiq.SECRET, async function(err,decode){
+        console.log(decode)
+        let user1 = await user.findOne({"_id": decode})
+        console.log(user1)
+        return user1;
     })
+}
+catch(err){
+    console.log(err);
+    throw err;
+}
 };
 
 //delete token

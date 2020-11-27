@@ -1,19 +1,33 @@
+const User = require("./../models/user");
 
-const User=require('./../models/user');
+let auth = async (req, res, next) => {
+  try {
+    let header = req.headers["authorization"];
+    if (!header) {
+      return res.status(401).json({ error: "authorization header is missing" });
+    }
+    let token = header.split(" ")[1];
+    if (!token) {
+      return res.status(401).json({ error: "authorization token is missing" });
+    }
+    let user = await User.findByToken(token);
+    console.log(user)
+    if (!user) {
+      return res.status(401).json({
+        error: "Invalid or malformed token",
+      });
+    } else {
+      req.token = token;
+      req.user = user;
+      console.log(user);
+      next();
+    }
+  } catch (err) {
+    return res.status(400).json({
+      error: "Server Error",
+      error_description: err,
+    });
+  }
+};
 
-let auth =(req,res,next)=>{
-    let token =req.cookies.auth;
-    User.findByToken(token,(err,user)=>{
-        if(err) throw err;
-        if(!user) return res.json({
-            error :true
-        });
-
-        req.token= token;
-        req.user=user;
-        next();
-
-    })
-}
-
-module.exports={auth};
+module.exports = { auth };
