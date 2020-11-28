@@ -32,7 +32,7 @@ class Pdf extends Component{
         <p>{this.props.college}</p>
         <p>{this.props.Email}</p>
         <p>Dear {this.props.Name},</p><br/>
-        <p>We are pleased to inform you that you have been appointed for the position of <b>{this.props.title}</b> at <b>Hand Holding Solution</b>.  </p>
+        <p>We are pleased to inform you that you have been appointed for the position of <b>{this.props.position}</b> at <b>Hand Holding Solution</b>.  </p>
         <p>At Hand Holding Solution, we try to help our customer by providing digital solution and services that help the brands to profess their vision to the world. We expect that you help us to continue this legacy.</p>
         <p>Your date of joining is {this.props.date} and your appointment will be governed by the terms and condition presented in the <b>Annexure</b>. The duration of internship will be {this.props.duration}.</p>
         <p>We hope that you will be an asset to our company and we are eagerly looking forward for you to be a part of our team. Please do not hesitate to mail us for any information you may need. Also please sign the duplicate of this offer as your acceptance and forward the same to us.</p>

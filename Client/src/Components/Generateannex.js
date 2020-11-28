@@ -132,7 +132,7 @@ function Table({ columns, data }) {
     )
 }
 
-function PaginationTableComponent() {
+function PaginationTableComponent1() {
     const columns = React.useMemo(
         () => [
             {
@@ -165,8 +165,8 @@ function PaginationTableComponent() {
                         accessor: 'email',
                     },
                     {
-                        Duration: 'Duration',
-                        accessor: "duration"
+                        Header: 'Duration',
+                        accessor: 'duration',
                     }
                 ],
             },
@@ -223,4 +223,4 @@ function PaginationTableComponent() {
     )
 }
 
-export default PaginationTableComponent;
+export default PaginationTableComponent1;

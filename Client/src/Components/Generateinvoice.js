@@ -132,15 +132,19 @@ function Table({ columns, data }) {
     )
 }
 
-function PaginationTableComponent() {
+function PaginationTableComponent2() {
     const columns = React.useMemo(
         () => [
             {
-                Header: 'Name',
+                Header: 'Invoice',
                 columns: [
                     {
-                        Header: 'First Name',
-                        accessor: "name",
+                        Header: 'Invoice No.',
+                        accessor: "invoice no.",
+                    },
+                    {
+                        Header: 'Invoice Date',
+                        accessor: "invoice Date",
                     },
                     
                 ],
@@ -149,25 +153,55 @@ function PaginationTableComponent() {
                 Header: 'Info',
                 columns: [
                     {
-                        Header: 'Date',
-                        accessor: 'date',
+                        Header: 'Due Date',
+                        accessor: ' Due date',
                     },
                     {
-                        Header: 'Position',
-                        accessor: 'position',
+                        Header: 'Item Name',
+                        accessor: 'item name',
                     },
                     {
-                        Header: 'College',
-                        accessor: 'college',
+                        Header: 'Item Quantity',
+                        accessor: 'item Quantity',
                     },
                     {
-                        Header: 'Email',
-                        accessor: 'email',
+                        Header: 'Item Rate',
+                        accessor: 'item rate',
                     },
                     {
-                        Duration: 'Duration',
-                        accessor: "duration"
-                    }
+                        Header: 'Sender Name',
+                        accessor: "sender name",
+                    },
+                    {
+                        Header: 'Sender Email',
+                        accessor: "sender Email",
+                    },
+                    {
+                        Header: 'Sender Mobile No.',
+                        accessor: "sender mobile number",
+                    },
+                    {
+                        Header: 'Sender City',
+                        accessor: "sender city",
+                    },
+                    {
+                        Header: 'Receiver Name',
+                        accessor: "receiver name",
+                    },
+                    
+                    {
+                        Header: 'Receiver Email',
+                        accessor: "receiver email",
+                    },
+                    {
+                        Header: 'Receiver Mobile Number',
+                        accessor: "receiver mobile number",
+                    },
+                    {
+                        Header: 'Receiver City',
+                        accessor: "receiver city",
+                    },
+
                 ],
             },
         ],
@@ -176,44 +210,84 @@ function PaginationTableComponent() {
 
     const data = [
         {
-            "name": "committee-c15dw",
-            "date": "10/11/1999",
-            "position": "Web Developer Intern",
-            "college": "SGSITS",
-            "email": "user@gmail.com",
-            "duration": "2 months"
+            "invoice no.": "committee-c15dw",
+            "invoice Date": "10/11/1999",
+            "Due Date": "10/11/1999",
+            "item name": "committee-c15dw",
+            "item Quantity": "2",
+            "item rate": "4",
+            "sender name": "committee-c15dw",
+            "sender Email": "user@gmail.com",
+            "sender mobile number": "1234567890",
+            "sender city": "acbs",
+            "receiver name": "abc",
+            "receiver email": "user@gmail.com",
+            "receiver mobile number": "1234569870",
+            "receiver city": "vcx"
         },
         {
-            "name": "midnight-wad0y",
-            "date": "11/02/2019",
-            "position": "Software Developer",
-            "college": "SRM",
-            "email": "user@gmail.com",
-            "duration": "2 months"
+            "invoice no.": "committee-c15dw",
+            "invoice Date": "10/11/1999",
+            "Due Date": "10/11/1999",
+            "item name": "committee-c15dw",
+            "item Quantity": "2",
+            "item rate": "4",
+            "sender name": "committee-c15dw",
+            "sender Email": "user@gmail.com",
+            "sender mobile number": "1234567890",
+            "sender city": "acbs",
+            "receiver name": "abc",
+            "receiver email": "user@gmail.com",
+            "receiver mobile number": "1234569870",
+            "receiver city": "vcx"
         },
         {
-            "name": "tree-sbdb0",
-            "date": "20/03/2020",
-            "position": "project manager",
-            "college": "MANIT",
-            "email": "user@gmail.com",
-            "duration": "2 months"
+            "invoice no.": "committee-c15dw",
+            "invoice Date": "10/11/1999",
+            "Due Date": "10/11/1999",
+            "item name": "committee-c15dw",
+            "item Quantity": "2",
+            "item rate": "4",
+            "sender name": "committee-c15dw",
+            "sender Email": "user@gmail.com",
+            "sender mobile number": "1234567890",
+            "sender city": "acbs",
+            "receiver name": "abc",
+            "receiver email": "user@gmail.com",
+            "receiver mobile number": "1234569870",
+            "receiver city": "vcx"
         },
         {
-            "name": "chin-borr8",
-            "date": "09/08/2019",
-            "position": "Hr",
-            "college": "COEP",
-            "email": "user@gmail.com",
-            "duration": "2 months"
+            "invoice no.": "committee-c15dw",
+            "invoice Date": "10/11/1999",
+            "Due Date": "10/11/1999",
+            "item name": "committee-c15dw",
+            "item Quantity": "2",
+            "item rate": "4",
+            "sender name": "committee-c15dw",
+            "sender Email": "user@gmail.com",
+            "sender mobile number": "1234567890",
+            "sender city": "acbs",
+            "receiver name": "abc",
+            "receiver email": "user@gmail.com",
+            "receiver mobile number": "1234569870",
+            "receiver city": "vcx"
         },
         {
-            "name": "women-83ef0",
-            "date": "04/07/2020",
-            "position": "Software Development Intern",
-            "college": "VIT",
-            "email": "user@gmail.com",
-            "duration": "2 months"
+            "invoice no.": "committee-c15dw",
+            "invoice Date": "10/11/1999",
+            "Due Date": "10/11/1999",
+            "item name": "committee-c15dw",
+            "item Quantity": "2",
+            "item rate": "4",
+            "sender name": "committee-c15dw",
+            "sender Email": "user@gmail.com",
+            "sender mobile number": "1234567890",
+            "sender city": "acbs",
+            "receiver name": "abc",
+            "receiver email": "user@gmail.com",
+            "receiver mobile number": "1234569870",
+            "receiver city": "vcx"
         }]
     console.log(JSON.stringify(data));
 
@@ -223,4 +297,4 @@ function PaginationTableComponent() {
     )
 }
 
-export default PaginationTableComponent;
+export default PaginationTableComponent2;

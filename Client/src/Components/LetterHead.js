@@ -5,15 +5,14 @@ import * as C from '../Constant';
 
 class Post extends Component {
     state = {
-        title: '',
-        content: '',
+        position: '',
         duration: '',
         postSubmitted: false,
         date: '',
         email: '',
         Name: '',
         college: '',
-        image: '',
+        
     }
 
     onChange = input => e => {
@@ -29,7 +28,7 @@ class Post extends Component {
     sunmitPost = (e) => {
 
         
-        if(!this.state.date || !this.state.Name || !this.state.college|| !this.state.duration|| !this.state.email|| !this.state.title){
+        if(!this.state.date || !this.state.Name || !this.state.college|| !this.state.duration|| !this.state.email|| !this.state.position){
             alert('All fields are required!');
             e.preventDefault();
         }else{
@@ -54,6 +53,10 @@ class Post extends Component {
               }, (error) => {
                 alert('Something Went Wrong')
               });
+            
+            this.setState({
+                postSubmitted: true
+            });
 
             
         }
@@ -89,7 +92,7 @@ class Post extends Component {
                                                 </div>
                                                 <div className="form-group">
                                                     <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
-                                                    <input onChange={this.onChange('title')} name="title" type="text" placeholder="Position" className="form-control" />
+                                                    <input onChange={this.onChange('position')} name="position" type="text" placeholder="Position" className="form-control" />
                                                 </div>
                                                 <div className="form-group">
                                                     <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
