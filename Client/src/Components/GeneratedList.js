@@ -2,6 +2,7 @@ import React from "react";
 import { useTable, usePagination } from 'react-table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './generate.module.css';
+import * as C from "../Constant";
 
 
 function Table({ columns, data }) {
@@ -215,6 +216,8 @@ function PaginationTableComponent() {
             "email": "user@gmail.com",
             "duration": "2 months"
         }]
+
+        
     console.log(JSON.stringify(data));
 
 
