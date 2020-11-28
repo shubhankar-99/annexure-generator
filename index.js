@@ -173,6 +173,53 @@ app.get("/api/annexureGet", auth, function (req, res) {
   // console.log(req.user.annexure);
 });
 
+//For Invoice Post
+app.post("/api/invoicePost", auth, async function (req, res) {
+  try {
+    // let token = req.token;
+    let user = req.user;
+    await User.findOneAndUpdate(
+      { email: user.email },
+      {
+        $push: {
+          invoice: {
+           
+            number: req.body.number,
+            date: req.body.date,
+            dueDate: req.body.dueDate,
+            
+            itemName: req.body.itemName,
+            quantity: req.body.quantity,
+            rate: req.body.rate,
+
+            senderName: req.body.senderName,
+            senderEmail: req.body.senderEmail,
+            senderMobileNumber: req.body.senderMobileNumber,
+            senderCity: req.body.senderCity,
+
+            recieverName: req.body.recieverName,
+            recieverEmail: req.body.recieverEmail,
+            recieverMobileNumber: req.body.recieverMobileNumber,
+            recieverCity: req.body.recieverCity
+
+          },
+        },
+      }
+    );
+    res.status(200).json({ message: "success" });
+  } catch (err) {
+    res.status(500).json({ error: err });
+  }
+});
+
+//For Invoice Get
+app.get("/api/invoiceGet", auth, function (req, res) {
+  res.json({
+    invoice: req.user.invoice,
+  });
+  // console.log(req.user.invoice);
+});
+
 app.get("/", function (req, res) {
   res.status(200).send(`Welcome to login , sign-up api`);
 });
