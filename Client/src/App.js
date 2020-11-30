@@ -56,6 +56,7 @@ export class App extends Component {
                         next2Step={this.next2Step}
                     />
                     
+                    
                 )
            
             case 2:
@@ -77,7 +78,8 @@ export class App extends Component {
                 )
             case 5:
                 return(
-                    <Invoice/>
+                    
+                    console.log('hello')
                 )    
             default:
                 console.log('Wrong Choice');
