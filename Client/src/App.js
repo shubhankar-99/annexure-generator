@@ -4,6 +4,9 @@ import LandingPage from './Components/LandingPage';
 import Post from './Components/LetterHead';
 import Annexure from './Components/Annexure';
 import PaginationTableComponent from './Components/GeneratedList';
+import PaginationTableComponent1 from './Components/Generateannex';
+import Invoice from './Components/Invoice';
+// import InvoicePdf from './Components/InvoicePdf'
 import InvoicePdf from './Components/InvoicePdf'
 
 export class App extends Component {
@@ -74,7 +77,7 @@ export class App extends Component {
                 )
             case 5:
                 return(
-                    <PaginationTableComponent/>
+                    <Invoice/>
                 )    
             default:
                 console.log('Wrong Choice');

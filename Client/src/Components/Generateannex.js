@@ -2,7 +2,6 @@ import React from "react";
 import { useTable, usePagination } from 'react-table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './generate.module.css';
-import * as C from "../Constant";
 
 
 function Table({ columns, data }) {
@@ -133,7 +132,7 @@ function Table({ columns, data }) {
     )
 }
 
-function PaginationTableComponent() {
+function PaginationTableComponent1() {
     const columns = React.useMemo(
         () => [
             {
@@ -166,8 +165,8 @@ function PaginationTableComponent() {
                         accessor: 'email',
                     },
                     {
-                        Duration: 'Duration',
-                        accessor: "duration"
+                        Header: 'Duration',
+                        accessor: 'duration',
                     }
                 ],
             },
@@ -216,8 +215,6 @@ function PaginationTableComponent() {
             "email": "user@gmail.com",
             "duration": "2 months"
         }]
-
-        
     console.log(JSON.stringify(data));
 
 
@@ -226,4 +223,4 @@ function PaginationTableComponent() {
     )
 }
 
-export default PaginationTableComponent;
+export default PaginationTableComponent1;
