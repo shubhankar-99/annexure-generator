@@ -7,6 +7,7 @@ import PaginationTableComponent from './Components/GeneratedList';
 import PaginationTableComponent1 from './Components/Generateannex';
 import Invoice from './Components/Invoice';
 // import InvoicePdf from './Components/InvoicePdf'
+import InvoicePdf from './Components/InvoicePdf'
 
 export class App extends Component {
 
@@ -54,7 +55,7 @@ export class App extends Component {
                         nextStep={this.nextStep}
                         next2Step={this.next2Step}
                     />
-                    // <InvoicePdf/>
+                    
                 )
            
             case 2:
