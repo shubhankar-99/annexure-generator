@@ -6,7 +6,9 @@ export const Link = {
     LetterHeadPost: url + "/letterHeadPost",
     LetterHeadGet: url + "/letterHeadGet",
     AnnexurePost: url + "/annexurePost",
-    AnnexureGet: url + "/annexureGet"
+    AnnexureGet: url + "/annexureGet",
+    InvoicePost: url + "/invoicePost",
+    InvoiceGet: url + "/invoiceGet"
     }
     
     

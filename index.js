@@ -200,7 +200,10 @@ app.post("/api/invoicePost", auth, async function (req, res) {
             recieverName: req.body.recieverName,
             recieverEmail: req.body.recieverEmail,
             recieverMobileNumber: req.body.recieverMobileNumber,
-            recieverCity: req.body.recieverCity
+            recieverCity: req.body.recieverCity,
+
+            tax: req.body.tax,
+            discount: req.body.discount
 
           },
         },
