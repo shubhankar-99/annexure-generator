@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTable, usePagination } from 'react-table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './generate.module.css';
 import * as C from "../Constant";
+import axios from "axios";
 
 
 function Table({ columns, data }) {
@@ -30,11 +31,11 @@ function Table({ columns, data }) {
         },
         usePagination
     )
-
+   
     // Render the UI for your table
     return ( <div>
         <div >
-            <pre className={styles.design}>
+           {/* <pre className={styles.design}>
                 <code>
                     {JSON.stringify(
                         {
@@ -47,8 +48,8 @@ function Table({ columns, data }) {
                         null,
                         2
                     )}
-                </code>
-            </pre>
+                </code> 
+                </pre> */}
             <table className={styles.table} {...getTableProps()}>
                 <thead>
                     {headerGroups.map(headerGroup => (
@@ -134,13 +135,34 @@ function Table({ columns, data }) {
 }
 
 function PaginationTableComponent() {
+    
+    const [data, setData]= useState([]);
+        let config = {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token"),
+            },
+          };
+          
+    axios.get(C.Link.baseUrl.LetterHeadGet,config)
+    .then(
+        res => {
+            console.log(res.data.letterHead);
+            setData(res.data.letterHead);
+            
+          }
+    )
+    .catch ((error) =>{
+        console.log(error);
+    });
+    
+
     const columns = React.useMemo(
         () => [
             {
-                Header: 'Name',
+                Header: 'Letter Head',
                 columns: [
                     {
-                        Header: 'First Name',
+                        Header: 'Name',
                         accessor: "name",
                     },
                     
@@ -155,7 +177,7 @@ function PaginationTableComponent() {
                     },
                     {
                         Header: 'Position',
-                        accessor: 'position',
+                        accessor: 'title',
                     },
                     {
                         Header: 'College',
@@ -175,50 +197,10 @@ function PaginationTableComponent() {
         []
     )
 
-    const data = [
-        {
-            "name": "committee-c15dw",
-            "date": "10/11/1999",
-            "position": "Web Developer Intern",
-            "college": "SGSITS",
-            "email": "user@gmail.com",
-            "duration": "2 months"
-        },
-        {
-            "name": "midnight-wad0y",
-            "date": "11/02/2019",
-            "position": "Software Developer",
-            "college": "SRM",
-            "email": "user@gmail.com",
-            "duration": "2 months"
-        },
-        {
-            "name": "tree-sbdb0",
-            "date": "20/03/2020",
-            "position": "project manager",
-            "college": "MANIT",
-            "email": "user@gmail.com",
-            "duration": "2 months"
-        },
-        {
-            "name": "chin-borr8",
-            "date": "09/08/2019",
-            "position": "Hr",
-            "college": "COEP",
-            "email": "user@gmail.com",
-            "duration": "2 months"
-        },
-        {
-            "name": "women-83ef0",
-            "date": "04/07/2020",
-            "position": "Software Development Intern",
-            "college": "VIT",
-            "email": "user@gmail.com",
-            "duration": "2 months"
-        }]
+   
 
         
-    console.log(JSON.stringify(data));
+  console.log(JSON.stringify(data));
 
 
     return (

@@ -1,8 +1,8 @@
 .table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 100%;
-    font-size: 30px;
+    width: 80%;
+    font-size: 20px;
     margin: auto;
   }
   
@@ -19,6 +19,6 @@
   .design{
       background-color: rgb(3, 60, 80);
       color:white;
-      font-size: 30px;
+      font-size: 20px;
   }
   

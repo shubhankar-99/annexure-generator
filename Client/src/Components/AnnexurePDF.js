@@ -54,8 +54,7 @@ render(){
 <br/>
 4.  All the work that you will produce at or in relation to Hand Holding Solution will be the intellectual property of Hand Holding Solution. You are not allowed to store, copy, sell, share, and distribute it to a third party under any circumstances. Similarly, you are expected to refrain from talking about your work in public domains (both online such as blogging, social networking site and offline among your friends, college etc.) without prior discussion and approval of your mentor.
     </p>
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> 
-    <br/>
+    <br/><br/><br/><br/>
     <br/>
     <p>5. We take data privacy and security very seriously and to maintain confidentiality of any students, customers, clients, and companies’ data and contact details that you may get access to will be your responsibility. Hand Holding Solution operates on zero tolerance principle with regard to any breach of data security guidelines. In case you resign or fired from Hand Holding Solution, you are expected to hand over all Hand Holding Solution work/data stored on your Personal Computer to your mentor and delete the same from your machine.
 <br/><br/>
@@ -70,7 +69,7 @@ render(){
 
 10.  Have fun at what you do and do the right thing – both the principles are core of what Hand Holding Solution stands for and we expect you to imbibe them in your day to day actions and continuously challenge us if we are falling short of expectations on either of them.
 </p>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> <br/> <br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/> <br/> <br/><br/><br/><br/><br/><br/>
 <p>11.  You will be provided with Following Perks:<br/>
 • If you are doing the work perfectly, you'll be rewarded with a monetary prize of INR {this.props.stipend}/- per month. Also, you will be provided with the completion certificate at the end of your internship.<br/>
 • Letter of Recommendation will be provided (based on the work).<br/>
@@ -84,7 +83,7 @@ I have negotiated, agreed, read and understood all the terms and conditions of t
  
 Place: - {this.props.place}<br/><br/>                                                                                  
 Name: - {this.props.name}<br/>
-    
+<br/><br/><br/><br/>
 
 </div>
 </div>
