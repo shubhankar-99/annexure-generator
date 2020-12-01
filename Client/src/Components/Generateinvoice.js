@@ -130,7 +130,7 @@ function Table({ columns, data }) {
                 </select>
             </ul>
             </div>
-        </div >
+        </div>
         </div>
     )
 }
