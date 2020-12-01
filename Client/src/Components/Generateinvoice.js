@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTable, usePagination } from 'react-table';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import styles from './generate.module.css';
+import styles from './generateinvoice.module.css';
+import * as C from "../Constant";
+import axios from "axios";
+
 
 
 function Table({ columns, data }) {
@@ -33,7 +36,7 @@ function Table({ columns, data }) {
     // Render the UI for your table
     return ( <div>
         <div >
-            <pre className={styles.design}>
+           {/* <pre className={styles.design}>
                 <code>
                     {JSON.stringify(
                         {
@@ -47,7 +50,7 @@ function Table({ columns, data }) {
                         2
                     )}
                 </code>
-            </pre>
+                </pre> */}
             <table className={styles.table} {...getTableProps()}>
                 <thead>
                     {headerGroups.map(headerGroup => (
@@ -133,6 +136,26 @@ function Table({ columns, data }) {
 }
 
 function PaginationTableComponent2() {
+    const [data, setData]= useState([]);
+    let config = {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      };
+      
+axios.get(C.Link.baseUrl.InvoiceGet,config)
+.then(
+    res => {
+        console.log(res.data.invoice);
+        setData(res.data.invoice);
+        
+      }
+)
+.catch ((error) =>{
+    console.log(error);
+});
+
+
     const columns = React.useMemo(
         () => [
             {
@@ -140,11 +163,11 @@ function PaginationTableComponent2() {
                 columns: [
                     {
                         Header: 'Invoice No.',
-                        accessor: "invoice no.",
+                        accessor: "number",
                     },
                     {
                         Header: 'Invoice Date',
-                        accessor: "invoice Date",
+                        accessor: "date",
                     },
                     
                 ],
@@ -154,52 +177,52 @@ function PaginationTableComponent2() {
                 columns: [
                     {
                         Header: 'Due Date',
-                        accessor: ' Due date',
+                        accessor: 'dueDate',
                     },
                     {
                         Header: 'Item Name',
-                        accessor: 'item name',
+                        accessor: 'itemName',
                     },
                     {
                         Header: 'Item Quantity',
-                        accessor: 'item Quantity',
+                        accessor: 'quantity',
                     },
                     {
                         Header: 'Item Rate',
-                        accessor: 'item rate',
+                        accessor: 'rate',
                     },
                     {
                         Header: 'Sender Name',
-                        accessor: "sender name",
+                        accessor: "senderName",
                     },
                     {
                         Header: 'Sender Email',
-                        accessor: "sender Email",
+                        accessor: "senderEmail",
                     },
                     {
                         Header: 'Sender Mobile No.',
-                        accessor: "sender mobile number",
+                        accessor: "senderMobileNumber",
                     },
                     {
                         Header: 'Sender City',
-                        accessor: "sender city",
+                        accessor: "senderCity",
                     },
                     {
                         Header: 'Receiver Name',
-                        accessor: "receiver name",
+                        accessor: "recieverName",
                     },
                     
                     {
                         Header: 'Receiver Email',
-                        accessor: "receiver email",
+                        accessor: "recieverEmail",
                     },
                     {
                         Header: 'Receiver Mobile Number',
-                        accessor: "receiver mobile number",
+                        accessor: "recieverMobileNumber",
                     },
                     {
                         Header: 'Receiver City',
-                        accessor: "receiver city",
+                        accessor: "recieverCity",
                     },
 
                 ],
@@ -208,87 +231,7 @@ function PaginationTableComponent2() {
         []
     )
 
-    const data = [
-        {
-            "invoice no.": "committee-c15dw",
-            "invoice Date": "10/11/1999",
-            "Due Date": "10/11/1999",
-            "item name": "committee-c15dw",
-            "item Quantity": "2",
-            "item rate": "4",
-            "sender name": "committee-c15dw",
-            "sender Email": "user@gmail.com",
-            "sender mobile number": "1234567890",
-            "sender city": "acbs",
-            "receiver name": "abc",
-            "receiver email": "user@gmail.com",
-            "receiver mobile number": "1234569870",
-            "receiver city": "vcx"
-        },
-        {
-            "invoice no.": "committee-c15dw",
-            "invoice Date": "10/11/1999",
-            "Due Date": "10/11/1999",
-            "item name": "committee-c15dw",
-            "item Quantity": "2",
-            "item rate": "4",
-            "sender name": "committee-c15dw",
-            "sender Email": "user@gmail.com",
-            "sender mobile number": "1234567890",
-            "sender city": "acbs",
-            "receiver name": "abc",
-            "receiver email": "user@gmail.com",
-            "receiver mobile number": "1234569870",
-            "receiver city": "vcx"
-        },
-        {
-            "invoice no.": "committee-c15dw",
-            "invoice Date": "10/11/1999",
-            "Due Date": "10/11/1999",
-            "item name": "committee-c15dw",
-            "item Quantity": "2",
-            "item rate": "4",
-            "sender name": "committee-c15dw",
-            "sender Email": "user@gmail.com",
-            "sender mobile number": "1234567890",
-            "sender city": "acbs",
-            "receiver name": "abc",
-            "receiver email": "user@gmail.com",
-            "receiver mobile number": "1234569870",
-            "receiver city": "vcx"
-        },
-        {
-            "invoice no.": "committee-c15dw",
-            "invoice Date": "10/11/1999",
-            "Due Date": "10/11/1999",
-            "item name": "committee-c15dw",
-            "item Quantity": "2",
-            "item rate": "4",
-            "sender name": "committee-c15dw",
-            "sender Email": "user@gmail.com",
-            "sender mobile number": "1234567890",
-            "sender city": "acbs",
-            "receiver name": "abc",
-            "receiver email": "user@gmail.com",
-            "receiver mobile number": "1234569870",
-            "receiver city": "vcx"
-        },
-        {
-            "invoice no.": "committee-c15dw",
-            "invoice Date": "10/11/1999",
-            "Due Date": "10/11/1999",
-            "item name": "committee-c15dw",
-            "item Quantity": "2",
-            "item rate": "4",
-            "sender name": "committee-c15dw",
-            "sender Email": "user@gmail.com",
-            "sender mobile number": "1234567890",
-            "sender city": "acbs",
-            "receiver name": "abc",
-            "receiver email": "user@gmail.com",
-            "receiver mobile number": "1234569870",
-            "receiver city": "vcx"
-        }]
+    
     console.log(JSON.stringify(data));
 
 

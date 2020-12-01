@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Pdf from "./PDF";
+import Letterhead from "./LetterHeadpdf";
 import axios from "axios";
 import * as C from "../Constant";
 
-class Post extends Component {
+class Letter extends Component {
   state = {
     title: "",
     content: "",
@@ -168,7 +168,7 @@ class Post extends Component {
             </div>
           </div>
         ) : (
-          <Pdf
+          < Letterhead
             date={this.state.date}
             Name={this.state.Name}
             email={this.state.email}
@@ -182,4 +182,4 @@ class Post extends Component {
   }
 }
 
-export default Post;
+export default Letter;

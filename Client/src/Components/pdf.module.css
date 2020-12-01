@@ -1,24 +1,25 @@
 .Post{
     background-image: url(../images/letter.jpg) ;
    
-    background-size: 652px 898px;
+    background-size: 97% 100%;
     background-repeat: no-repeat;
     margin: 0 auto;
     display: table;
     align-items: center;
-    padding-left: 20px;
-    padding-right: 110px;
-    padding-top: 90px;
-    padding-bottom: 40px;
-    max-width: 722px;
-    font-size: 14px;
+    padding-left: 2%;
+    padding-right: 9%;
+    padding-top: 9%;
+    padding-bottom: 2.5%;
+    max-width: 46%;
+    min-width: 46%;
+    font-size: 100%;
     font-family: Arial, Helvetica, sans-serif;
    
   }
   
   
   .sign{
-      height: 80px;
-      width: 150px;
+      height: 8%;
+      width: 25%;
   }
   

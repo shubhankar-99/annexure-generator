@@ -8,7 +8,7 @@ export const Link = {
     AnnexurePost: url + "/annexurePost",
     AnnexureGet: url + "/annexureGet",
     InvoicePost: url + "/invoicePost",
-    InvoiceGet: url + "/invoiceGet"
+    InvoiceGet: url + "/invoiceGet",
     }
     
     
