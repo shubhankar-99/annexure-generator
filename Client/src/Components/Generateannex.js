@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTable, usePagination } from "react-table";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./generate.module.css";
@@ -163,7 +163,7 @@ function PaginationTableComponent1() {
       Authorization: "Bearer " + localStorage.getItem("token"),
     },
   };
-
+useEffect(()=>{
   axios
     .get(C.Link.baseUrl.AnnexureGet, config)
     .then((res) => {
@@ -173,6 +173,9 @@ function PaginationTableComponent1() {
     .catch((error) => {
       console.log(error);
     });
+
+},[])
+  
 
   const columns = React.useMemo(
     () => [
