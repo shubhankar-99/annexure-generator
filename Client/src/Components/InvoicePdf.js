@@ -8,8 +8,10 @@ export class InvoicePdf extends Component {
     const input = document.getElementById("printInvoice");
     html2canvas(input).then(function (canvas) {
       const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF();
-      pdf.addImage(imgData, "JPEG", 0, 0);
+      const pdf = new jsPDF("p", "mm", "a4");
+      const width = pdf.internal.pageSize.getWidth();
+      const height = pdf.internal.pageSize.getHeight();
+      pdf.addImage(imgData, "JPEG", 0, 0, width, height);
       // pdf.output('dataurlnewwindow');
       pdf.save("download.pdf");
     });
