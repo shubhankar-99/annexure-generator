@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTable, usePagination } from 'react-table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './generateinvoice.module.css';
@@ -142,18 +142,20 @@ function PaginationTableComponent2() {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
       };
-      
-axios.get(C.Link.baseUrl.InvoiceGet,config)
-.then(
-    res => {
-        console.log(res.data.invoice);
-        setData(res.data.invoice);
+      useEffect(()=>{
+        axios.get(C.Link.baseUrl.InvoiceGet,config)
+        .then(
+            res => {
+                console.log(res.data.invoice);
+                setData(res.data.invoice);
+                
+              }
+        )
+        .catch ((error) =>{
+            console.log(error);
+        });
         
-      }
-)
-.catch ((error) =>{
-    console.log(error);
-});
+      },[])
 
 
     const columns = React.useMemo(
