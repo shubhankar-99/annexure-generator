@@ -2,33 +2,64 @@ import React, { Component } from 'react';
 import './card-style.module.css';
 import { Button} from '@material-ui/core';
 import i1 from '../images/1.jpeg';
-import i2 from '../images/2.jpg';
-import i3 from '../images/3.jpg';
 import HoldingHand from '../images/HoldingHand.jpg';
-import * as LogoutLink from '../Constant';
-import axios from 'axios'
-import { green } from '@material-ui/core/colors';
-
-
+import { Redirect } from 'react-router';
 
 class LandingPage extends Component {
     
-    continue = (e) => {
+   
+    constructor(props) {
+        super(props);
+        //state object
+        this.state = {
+          step: 0
+        };
+      }
+
+      changeStep(value){
+          this.setState({
+              step:value
+          })
+        
+      }
+      back =(e) =>{
         e.preventDefault();
-        this.props.nextStep();
-    }
-    nextContinue = (e) => {
-        e.preventDefault();
-        this.props.next2Step();}
-    back =(e) =>{
-        e.preventDefault();
-        this.props.prevStep();
-    }
-    invoice = (e) => {
-        e.preventDefault();
-        this.props.next3Step();
+        localStorage.removeItem("token");
+        this.setState({
+            step: 7
+        })
     }
     render() {
+
+        if(this.state.step===1)
+        {
+            return <Redirect push to="/letterhead/generate" />;
+        }
+        if(this.state.step===2)
+        {
+            return <Redirect push to="/letterhead/list" />;
+        }
+        if(this.state.step===3)
+        {
+            return <Redirect push to="/annexure/generate" />;
+        }
+        if(this.state.step===4)
+        {
+            return <Redirect push to="/annexure/list" />;
+        }
+        if(this.state.step===5)
+        {
+            return <Redirect push to="/invoice/generate" />;
+        }
+        if(this.state.step===6)
+        {
+            return <Redirect push to="/invoice/list" />;
+        }
+        if(this.state.step===7)
+        {
+            return <Redirect push to="/" />;
+        }
+
         return (
 
             <div className="container-fluid d-flex justify-content-center" >
@@ -49,7 +80,7 @@ class LandingPage extends Component {
                                 <p className="card-text text-secondary">
                                 Generate a beautiful and customisable Letter Head as per your need. 
                                 </p>
-                              <button onClick={this.continue} className="btn btn-outline-success">Generate Letter Head </button>
+                              <button onClick={()=>this.changeStep(1)} className="btn btn-outline-success">Generate Letter Head </button>
                             </div>
                             </div>
                         </div>
@@ -63,7 +94,7 @@ class LandingPage extends Component {
                                 <p className="card-text text-secondary">
                                 Generate a beautiful and customisable Annexure as per your need. 
                                 </p>
-                              <button onClick={this.nextContinue} className="btn btn-outline-success">Generate Annexure </button>
+                              <button onClick={()=>this.changeStep(3)} className="btn btn-outline-success">Generate Annexure </button>
                             </div>
                             </div>
                         </div>
@@ -77,7 +108,7 @@ class LandingPage extends Component {
                                 <p className="card-text text-secondary">
                                 Generate a beautiful and customisable Invoice as per your need. 
                                 </p>
-                              <button className="btn btn-outline-success">Generate Invoice</button>
+                              <button  onClick={()=>this.changeStep(5)} className="btn btn-outline-success">Generate Invoice</button>
                             </div>
                             </div>
                             
@@ -87,13 +118,13 @@ class LandingPage extends Component {
                     <br/>
                     <div className="row"style={{marginBottom: '6px'}}>
                     <div className="col-md-4">
-                    <Button  style={{backgroundColor:"blue", width:"350px", WebkitTextFillColor: "white", margin:"auto"}} onClick={this.invoice} >View all Letter Head</Button>
+                    <Button  style={{backgroundColor:"blue", width:"350px", WebkitTextFillColor: "white", margin:"auto"}} onClick={()=>this.changeStep(2)} >View all Letter Head</Button>
                     </div> 
                     <div className="col-md-4">
-                    <Button  style={{backgroundColor:"rgb(3, 60, 80)", width:"350px", WebkitTextFillColor: "white", margin:"auto"}} onClick={this.invoice} >View all Annexure</Button>
+                    <Button  style={{backgroundColor:"rgb(3, 60, 80)", width:"350px", WebkitTextFillColor: "white", margin:"auto"}} onClick={()=>this.changeStep(4)} >View all Annexure</Button>
                     </div> 
                     <div className="col-md-4">
-                    <Button  style={{backgroundColor:"green", width:"350px", WebkitTextFillColor: "white", margin:"auto"}} onClick={this.invoice} >View all Invoice</Button>
+                    <Button  style={{backgroundColor:"green", width:"350px", WebkitTextFillColor: "white", margin:"auto"}} onClick={()=>this.changeStep(6)} >View all Invoice</Button>
                     </div>    
                     </div>
                 </div>

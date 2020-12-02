@@ -41,20 +41,24 @@ class Invoice extends Component {
             
 
             const data={
-                invoiceNo: this.state.invoiceNo,
-                invoiceDate: this.state.invoiceDate,
-                DueDate: this.state.DueDate,
+                number: this.state.invoiceNo,
+                date: this.state.invoiceDate,
+                dueDate: this.state.DueDate,
+
                 itemName: this.state.itemName,
-                itemQuantity: this.state.itemQuantity,
-                itemRate: this.state.itemRate,
+                quantity: this.state.itemQuantity,
+                rate: this.state.itemRate,
+
                 senderName: this.state.senderName,
                 senderEmail: this.state.senderEmail,
                 senderMobileNumber: this.state.senderMobileNumber,
                 senderCity: this.state.senderCity,
-                receiverName: this.state.receiverName,
-                receiverEmail: this.state.receiverEmail,
-                receiverMobileNumber: this.state.receiverMobileNumber,
-                receiverCity: this.state.receiverCity,
+
+                recieverName: this.state.receiverName,
+                recieverEmail: this.state.receiverEmail,
+                recieverMobileNumber: this.state.receiverMobileNumber,
+                recieverCity: this.state.receiverCity,
+                
                 tax: this.state.tax,
                 discount: this.state.discount
                 

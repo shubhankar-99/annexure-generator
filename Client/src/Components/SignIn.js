@@ -6,6 +6,7 @@ import { LockRounded } from "@material-ui/icons";
 import AlternateEmailIcon from "@material-ui/icons/AlternateEmail";
 import * as LoginLink from "../Constant";
 import axios from "axios";
+import { Redirect } from 'react-router';
 
 export class SignIn extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ export class SignIn extends Component {
     this.state = {
       email: null,
       password: null,
+      redirect: false
     };
   }
 
@@ -28,7 +30,9 @@ export class SignIn extends Component {
         (response) => {
           if (response.data.isAuth) {
             localStorage.setItem("token", response.data.token);
-            this.props.nextStep();
+            this.setState({
+              redirect:true
+            })
           } else {
             alert("Wrong Username or Password");
           }
@@ -39,6 +43,10 @@ export class SignIn extends Component {
       );
   };
   render() {
+    if(this.state.redirect)
+    {
+      return <Redirect push to="/landingpage" />;
+    }
     return (
       <div>
         <Grid container style={{ minHeight: "100vh", maxHeight: "100vh" }}>
