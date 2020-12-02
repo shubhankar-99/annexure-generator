@@ -28,12 +28,16 @@ class Letterhead extends Component {
         <br />
         <div id="divToPrint" className={styles.Post}>
           <div className="pdf">
+            
             <p>Date: {this.props.date}</p>
             <p>{this.props.Name}</p>
             <p>{this.props.college}</p>
             <p>{this.props.Email}</p>
             <p>Dear {this.props.Name},</p>
+            
+            
             <br />
+
             <p>
               We are pleased to inform you that you have been appointed for the
               position of <b>{this.props.position}</b> at

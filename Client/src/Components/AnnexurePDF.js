@@ -10,19 +10,20 @@ class Annex extends Component{
         const input = document.getElementById('page');
     html2canvas(input).then( function(canvas) {
       var imgData = canvas.toDataURL('image/png');
-      var imgWidth = 210; 
-      var pageHeight = 295;  
+      var doc = new jsPDF('p', 'mm','a4');
+      var imgWidth = doc.internal.pageSize.getWidth();
+      var pageHeight = doc.internal.pageSize.getHeight();
       var imgHeight = canvas.height * imgWidth / canvas.width;
       var heightLeft = imgHeight;
-      var doc = new jsPDF('p', 'mm');
+      
       var position = 0;
-      doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      doc.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
       heightLeft -= pageHeight;
       
       while (heightLeft >= 0) {
         position = heightLeft - imgHeight;
         doc.addPage();
-        doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        doc.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
         heightLeft -= pageHeight;
       }
       doc.save( 'file.pdf');
@@ -55,7 +56,8 @@ render(){
 4.  All the work that you will produce at or in relation to Hand Holding Solution will be the intellectual property of Hand Holding Solution. You are not allowed to store, copy, sell, share, and distribute it to a third party under any circumstances. Similarly, you are expected to refrain from talking about your work in public domains (both online such as blogging, social networking site and offline among your friends, college etc.) without prior discussion and approval of your mentor.
     </p>
     <br/><br/><br/><br/>
-    <br/>
+    <br/><br/><br/><br/><br/>
+
     <p>5. We take data privacy and security very seriously and to maintain confidentiality of any students, customers, clients, and companies’ data and contact details that you may get access to will be your responsibility. Hand Holding Solution operates on zero tolerance principle with regard to any breach of data security guidelines. In case you resign or fired from Hand Holding Solution, you are expected to hand over all Hand Holding Solution work/data stored on your Personal Computer to your mentor and delete the same from your machine.
 <br/><br/>
 6.  Under normal circumstances either the company or you may terminate this association by providing a prior notice of 30 days with the proper reason for leaving this company. However, the company may terminate this agreement forthwith under situations of in-disciplinary behaviour.
@@ -84,6 +86,7 @@ I have negotiated, agreed, read and understood all the terms and conditions of t
 Place: - {this.props.place}<br/><br/>                                                                                  
 Name: - {this.props.name}<br/>
 <br/><br/><br/><br/>
+<br/><br/><br/>
 
 </div>
 </div>
