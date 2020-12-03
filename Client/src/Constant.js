@@ -1,4 +1,4 @@
-const url =  ""
+const url =  "/api"
 export const Link = {
     baseUrl:{
     LogIn : url + "/login",
