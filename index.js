@@ -13,11 +13,11 @@ const app = express();
 // app use
 app.use(cors());
 
-app.use('/static',express.static(path.join(__dirname, "Client")));
+// app.use('/static',express.static(path.join(__dirname, "Client")));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname,'Client', 'build', 'index.html'))
-})
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname,'Client', 'build', 'index.html'))
+// })
 
 
 app.use(bodyparser.urlencoded({ extended: false }));
@@ -236,6 +236,11 @@ app.get("/api/invoiceGet", auth, function (req, res) {
 // app.get("/", function (req, res) {
 //   res.status(200).send(`Welcome to login , sign-up api`);
 // });
+app.use('/static',express.static(path.join(__dirname, "Client/build")));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname,'Client', 'build', 'index.html'))
+})
 
 // listening port
 const PORT = process.env.PORT || 5000;
