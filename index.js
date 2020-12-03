@@ -10,6 +10,14 @@ const db = require("./config/config").get(process.env.NODE_ENV);
 const app = express();
 // app use
 app.use(cors());
+
+app.use(express.static(path.join(__dirname, "Client")));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname,'Client', 'build', 'index.html'))
+})
+
+
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.use(cookieParser());
@@ -223,9 +231,9 @@ app.get("/api/invoiceGet", auth, function (req, res) {
   // console.log(req.user.invoice);
 });
 
-app.get("/", function (req, res) {
-  res.status(200).send(`Welcome to login , sign-up api`);
-});
+// app.get("/", function (req, res) {
+//   res.status(200).send(`Welcome to login , sign-up api`);
+// });
 
 // listening port
 const PORT = process.env.PORT || 5000;
