@@ -1,4 +1,4 @@
-const url =  "http://localhost:5000/api"
+const url =  ""
 export const Link = {
     baseUrl:{
     LogIn : url + "/login",
