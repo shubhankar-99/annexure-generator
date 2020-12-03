@@ -1,7 +1,7 @@
 import React from "react";
 import SignIn from "./Components/SignIn";
 import LandingPage from "./Components/LandingPage";
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { HashRouter as Router, Switch } from 'react-router-dom';
 import {PrivateRoute} from "./Components/PrivateRoute"
 import {LoginPrivateRoute} from "./Components/LoginPrivateRoute"
 import Letter from "./Components/LetterHead";
